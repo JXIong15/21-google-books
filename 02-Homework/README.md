@@ -34,7 +34,7 @@ Having an active and healthy commit history on GitHub is important for your futu
 
   * [Saved](Saved.png) - Renders all books saved to the Mongo database. User has an option to "View" the book, bringing them to the book on Google Books, or "Delete" a book, removing it from the Mongo database.
 
-1. Start by using the [01-Ins_Mern/create-react-express](../01-Activities/01-Ins_Mern/create-react-express) example as a base for your application.
+<!-- 1. Start by using the [01-Ins_Mern/create-react-express](../01-Activities/01-Ins_Mern/create-react-express) example as a base for your application. -->
 
 2. Add code to connect to a MongoDB database named `googlebooks` using the mongoose npm package.
 
