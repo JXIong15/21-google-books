@@ -1,0 +1,24 @@
+.home {
+    border: solid;
+    border-color: #4e4e50;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.home span {
+    color: #c3073f
+}
+
+.home h2 span {
+    color: #950740;
+}
+
+.home .btn {
+    background-color: #c3073f;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+}
