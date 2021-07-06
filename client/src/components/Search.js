@@ -32,6 +32,27 @@ class Search extends Component {
         this.bookSearch(this.state.search);
     };
 
+    handleSave = id => {
+        // id.preventDefault();
+        // console.log(this.state.bookList)
+        // console.log(id)
+console.log("save")
+console.log(id)
+        // MAKE SURE IT ACCOUNTS FOR ALREADY SAVED BOOKS
+        // if (this.state.savedList.includes(book._id)) {
+        //     alert("Book already exists in Saved Books.")
+        // }
+        // else {
+        // this.setState({savedList: this.state.savedList.concat(book)});
+        // API.saveBook(book)
+        //     .then(res => {
+        //         this.setState({ savedList: this.props.savedList.concat([res]) })
+        //         console.log("res", res)
+        //     })
+        //     .catch(err => console.log(err));
+        // // }
+    }
+
     render() {
         return (
             <section>
@@ -42,6 +63,7 @@ class Search extends Component {
                 />
                 <Results
                     resultsList={this.state.bookList}
+                    handleSave={this.handleSave}
                 />
             </section>
         );

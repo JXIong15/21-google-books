@@ -1,5 +1,5 @@
 import React from "react";
-import Book from "../../Book/Book";
+import Book from "../Book/Book";
 import "./Results.css"
 
 function Results(props) {
@@ -12,11 +12,13 @@ function Results(props) {
                     return (
                         <Book
                             key={book.id}
+                            id={book.id}
                             title={book.volumeInfo.title}
                             authors={book.volumeInfo.authors}
                             desc={book.volumeInfo.description}
                             img={book.volumeInfo.imageLinks.thumbnail}
                             link={book.volumeInfo.previewLink}
+                            handleSave={props.handleSave}
                         />
                     )
                 })}

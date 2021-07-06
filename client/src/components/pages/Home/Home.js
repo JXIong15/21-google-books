@@ -6,7 +6,7 @@ function Home() {
     return (
         <div className="home">
             <section>
-                <h1>(<span>React</span>) Google Books Search</h1>
+                <h1>( <span>React</span> ) Google Books Search</h1>
                 <h3><span>Search For</span> and <span>Save</span> Books of Interest</h3>
             </section>
 

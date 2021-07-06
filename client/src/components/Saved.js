@@ -1,22 +1,24 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Results from "./pages/Results/Results";
-import SavedBooks from "./pages/SavedBooks"
 
 class Saved extends Component {
     state = {
-        savedBooks: []
+        savedList: []
     }
 
-    
+    componentDidMount = () => {
+        API.savedBooks()
+            .then(res => this.setState({ savedList: res.data }))
+            .catch(err => console.log(err));
+    }
+
 
 
     render() {
-
         return (
             <div>
                 <h3>Saved Books</h3>
-                <SavedBooks />
+                
             </div>
         );
     }
