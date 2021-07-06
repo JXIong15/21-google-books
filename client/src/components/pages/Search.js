@@ -1,15 +1,13 @@
 import React from "react";
+import Form from "./Form"
 
 function Search() {
     return (
         <section>
-            <div className="search-form">
-            <h3>Book Search</h3>
-
-            </div>
+            <Form />
 
             <div className="search-results">
-                
+
             </div>
         </section>
     );
