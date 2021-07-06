@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -13,9 +14,7 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home} />
-
           <Route exact path="/search" component={Search} />
-
           <Route exact path="/saved" component={Saved} />
 
         </Switch>
