@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Form from "./pages/Form";
-import Results from "./pages/Results";
-import API from "../utils/API";
+import Form from "../pages/Form/Form";
+import Results from "../pages/Results";
+import API from "../../utils/API";
+import "./Search.css"
 
 class Search extends Component {
     state = {
