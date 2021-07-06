@@ -13,23 +13,17 @@ class Search extends Component {
         this.bookSearch();
     }
 
-    createBook = bookInfo => {
-        // return {
-            
-        // }
-    }
-
+    // searches for book based on user input
     bookSearch = query => {
         API.getBooks(query)
-            .then(res => this.setState({bookList: res.data}))
+            .then(res => this.setState({ bookList: res.data.items }))
             .catch(err => console.log(err));
     }
 
     handleInputChange = event => {
         // Getting the value and name of the input which triggered the change
-        let value = event.target.value;
+        const value = event.target.value;
         this.setState({ search: value })
-
     };
 
     handleFormSubmit = event => {
@@ -38,9 +32,7 @@ class Search extends Component {
         this.bookSearch(this.state.search);
     };
 
-
     render() {
-        console.log(this.state.bookList)
         return (
             <section>
                 <Form
@@ -48,7 +40,9 @@ class Search extends Component {
                     handleInputChange={this.handleInputChange}
                     handleFormSubmit={this.handleFormSubmit}
                 />
-                <Results />
+                <Results
+                    resultsList={this.state.bookList}
+                />
             </section>
         );
     }
