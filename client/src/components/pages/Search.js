@@ -1,14 +1,12 @@
 import React from "react";
-import Form from "./Form"
+import Form from "./Form";
+import Results from "./Results";
 
 function Search() {
     return (
         <section>
             <Form />
-
-            <div className="search-results">
-
-            </div>
+            <Results />
         </section>
     );
 }

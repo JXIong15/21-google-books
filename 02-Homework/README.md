@@ -38,9 +38,9 @@ Having an active and healthy commit history on GitHub is important for your futu
 
 2. Add code to connect to a MongoDB database named `googlebooks` using the mongoose npm package.
 
-3. Using mongoose, then create a Book schema.
+<!-- 3. Using mongoose, then create a Book schema. -->
 
-4. At a minimum, books should have each of the following fields:
+<!-- 4. At a minimum, books should have each of the following fields:
 
 * `title` - Title of the book from the Google Books API
 
@@ -50,9 +50,9 @@ Having an active and healthy commit history on GitHub is important for your futu
 
 * `image` - The Book's thumbnail image as returned from the Google Books API
 
-* `link` - The Book's information link as returned from the Google Books API
+* `link` - The Book's information link as returned from the Google Books API -->
 
-* Creating `documents` in your `books` collection similar to the following:
+<!-- * Creating `documents` in your `books` collection similar to the following:
 
     ```js
     {
@@ -62,21 +62,21 @@ Having an active and healthy commit history on GitHub is important for your futu
       link: "http://books.google.com/books?id=sazytgAACAAJ&dq=title:The+Hunger+Games&hl=&source=gbs_api"
       title: "The Hunger Games"
     }
-    ```
+    ``` -->
 
-5. Create a layout similar to the mockups displayed above. This should be a SPA (Single Page Application) that uses [`react-router-dom`](https://github.com/reactjs/react-router) to navigate, hide and show your React components without changing the route within Express.
+<!-- 5. Create a layout similar to the mockups displayed above. This should be a SPA (Single Page Application) that uses [`react-router-dom`](https://github.com/reactjs/react-router) to navigate, hide and show your React components without changing the route within Express. -->
 
-* The layout should include at least two React Components for each page `Search` and `Saved`.
+<!-- * The layout should include at least two React Components for each page `Search` and `Saved`. -->
 
-* Feel free to try out alternative CSS framework to Bootstrap.
+<!-- * Feel free to try out alternative CSS framework to Bootstrap. -->
 
 6. Add the following Express routes for your app:
 
-* `/api/books` (get) - Should return all saved books as JSON.
+<!-- * `/api/books` (get) - Should return all saved books as JSON. -->
 
-* `/api/books` (post) - Will be used to save a new book to the database.
+<!-- * `/api/books` (post) - Will be used to save a new book to the database. -->
 
-* `/api/books/:id` (delete) - Will be used to delete a book from the database by Mongo `_id`.
+<!-- * `/api/books/:id` (delete) - Will be used to delete a book from the database by Mongo `_id`. -->
 
 * `*` (get) - Will load your single HTML page in `client/build/index.html`. Make sure you have this _after_ all other routes are defined.
 
@@ -84,13 +84,13 @@ Having an active and healthy commit history on GitHub is important for your futu
 
 - - -
 
-### Bonus Live Updates to Saved Books
+<!-- ### Bonus Live Updates to Saved Books
 
 * Use React routing and [socket.io](http://socket.io) to create a notification or a component that triggers whenever a user saves an book. Your message should include the title of the saved book.
 
   * Say you have multiple browsers open, each one visiting your site. If you save an book in one browser, then all of your browsers should notify you that a new book was saved.
 
-  * [Socket.io NPM package](https://www.npmjs.com/package/socket.io)
+  * [Socket.io NPM package](https://www.npmjs.com/package/socket.io) -->
 
 ### Reminder: Submission on BCS
 
