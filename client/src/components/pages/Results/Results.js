@@ -18,7 +18,7 @@ function Results(props) {
                             desc={book.volumeInfo.description}
                             img={book.volumeInfo.imageLinks.thumbnail}
                             link={book.volumeInfo.previewLink}
-                            handleSave={() => props.handleSave(book.id)}
+                            handleSave={() => props.handleSave()}
                         />
                     )
                 })}

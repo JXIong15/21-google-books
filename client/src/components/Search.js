@@ -6,8 +6,7 @@ import API from "../utils/API";
 class Search extends Component {
     state = {
         search: "",
-        bookList: [],
-        bookID: ""
+        bookList: []
     };
 
     componentDidMount() {
@@ -34,9 +33,7 @@ class Search extends Component {
     };
 
     handleSave = id => {
-        // id.preventDefault();
         // console.log(this.state.bookList)
-        // console.log(id)
 console.log("save")
 console.log(id)
 
@@ -66,7 +63,7 @@ console.log(id)
                 />
                 <Results
                     resultsList={this.state.bookList}
-                    handleSave={() => this.handleSave(bookID)}
+                    handleSave={this.handleSave}
                 />
             </section>
         );
