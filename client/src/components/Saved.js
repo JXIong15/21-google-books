@@ -1,11 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
+import API from "../utils/API";
+import Results from "./pages/Results";
+import SavedBooks from "./pages/SavedBooks"
 
-function Saved() {
-    return (
-        <div>
-            <h1>SAVED</h1>
-        </div>
-    );
+class Saved extends Component {
+    state = {
+        savedBooks: []
+    }
+
+    
+
+
+    render() {
+
+        return (
+            <div>
+                <h3>Saved Books</h3>
+                <SavedBooks />
+            </div>
+        );
+    }
 }
 
 export default Saved;

@@ -1,5 +1,5 @@
 import React from "react";
-import Book from "./Book";
+import Book from "../Book";
 
 function Results(props) {
     let resList = Object.values(props.resultsList);
