@@ -1,0 +1,53 @@
+.book {
+    border: solid;
+    border-color: #6f2232;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.book .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.save {
+    background-color: #c3073f;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.book a {
+    color: white;
+    text-decoration: none;
+}
+
+.book a:hover {
+    font-weight: bolder;
+    color: #c3073f;
+}
+
+.save:hover {
+    font-weight: bolder;
+}
+
+.book h5 {
+    text-align: start;
+    font-size: medium;
+}
+
+.book section {
+    display: flex;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.book section img {
+    border-radius: 10px;
+}
+
+.book section p {
+    margin: 10px;
+    margin-left: 20px;
+}

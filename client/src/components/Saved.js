@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Results from "./pages/Results";
+import Results from "./pages/Results/Results";
 import SavedBooks from "./pages/SavedBooks"
 
 class Saved extends Component {

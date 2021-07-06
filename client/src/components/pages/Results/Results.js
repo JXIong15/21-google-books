@@ -1,11 +1,13 @@
 import React from "react";
-import Book from "../Book";
+import Book from "../../Book/Book";
+import "./Results.css"
 
 function Results(props) {
     let resList = Object.values(props.resultsList);
     return (
         <div className="search-res">
-            <h3>Results</h3>
+            <h4>Results</h4>
+            <p>Click on the title to view a preview of the book.</p>
                 {resList.map((book) => {
                     return (
                         <Book

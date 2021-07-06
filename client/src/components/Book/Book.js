@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import API from "../utils/API";
+import API from "../../utils/API";
+import "./Book.css";
 
 class Book extends Component {
     state = {
@@ -20,32 +21,30 @@ class Book extends Component {
         //     alert("Book already exists in Saved Books.")
         // }
         // else {
-            // this.setState({savedList: this.state.savedList.concat(book)});
-            API.saveBook(book)
-                .then(res => {
-                    this.setState({ savedList: this.state.savedList.concat([res]) })
-                    console.log("res",res)
-                })
-                .catch(err => console.log(err));
+        // this.setState({savedList: this.state.savedList.concat(book)});
+        API.saveBook(book)
+            .then(res => {
+                this.setState({ savedList: this.state.savedList.concat([res]) })
+                console.log("res", res)
+            })
+            .catch(err => console.log(err));
         // }
-        
+
         console.log(this.state.savedList)
     }
 
     render() {
         return (
-            <div>
-                <div>
-                    <h3>{this.props.title}</h3>
-                    <a href={this.props.link} target="_blank" rel="noopener noreferrer">
-                        <button>View</button>
-                    </a>
-                    <button onClick={this.handleSave}>Save</button>
+            <div className="book">
+                <div className="head">
+                    <h4><a href={this.props.link} target="_blank" rel="noopener noreferrer">{this.props.title}</a></h4>
+                    <button className="save" onClick={this.handleSave}>Save</button>
+
                 </div>
-                <h4>Written By: {this.props.authors}</h4>
+                <h5>Written By: {this.props.authors}</h5>
                 <section>
                     <img src={this.props.img} alt={this.props.title + " thumbnail"}></img>
-                    <p>{this.props.desc}</p>
+                    <p>{this.props.desc ? this.props.desc : "No synopsis."}</p>
                 </section>
             </div>
         );
