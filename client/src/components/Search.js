@@ -33,24 +33,21 @@ class Search extends Component {
     };
 
     handleSave = id => {
-        // console.log(this.state.bookList)
-console.log("save")
-console.log(id)
-
-
+        let book = this.state.bookList.find((book) => book.id === id)
         // MAKE SURE IT ACCOUNTS FOR ALREADY SAVED BOOKS
-        // if (this.state.savedList.includes(book._id)) {
+        // if (this.state.bookList.includes(book._id)) {
         //     alert("Book already exists in Saved Books.")
         // }
         // else {
         // this.setState({savedList: this.state.savedList.concat(book)});
-        // API.saveBook(book)
-        //     .then(res => {
-        //         this.setState({ savedList: this.props.savedList.concat([res]) })
-        //         console.log("res", res)
-        //     })
-        //     .catch(err => console.log(err));
-        // // }
+        API.saveBook({book })
+            .then(res => {
+                console.log("SAVING")
+                // this.bookSearch()
+                // this.setState({ savedList: this.props.savedList.concat([res]) })
+            })
+            .catch(err => console.log(err));
+        // }
     }
 
     render() {

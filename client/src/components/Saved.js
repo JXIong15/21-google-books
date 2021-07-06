@@ -15,6 +15,7 @@ class Saved extends Component {
 
 
     render() {
+        console.log(this.state.savedList)
         return (
             <div>
                 <h3>Saved Books</h3>
