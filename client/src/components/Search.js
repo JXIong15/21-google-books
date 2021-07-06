@@ -6,7 +6,8 @@ import API from "../utils/API";
 class Search extends Component {
     state = {
         search: "",
-        bookList: []
+        bookList: [],
+        bookID: ""
     };
 
     componentDidMount() {
@@ -38,6 +39,8 @@ class Search extends Component {
         // console.log(id)
 console.log("save")
 console.log(id)
+
+
         // MAKE SURE IT ACCOUNTS FOR ALREADY SAVED BOOKS
         // if (this.state.savedList.includes(book._id)) {
         //     alert("Book already exists in Saved Books.")
@@ -63,7 +66,7 @@ console.log(id)
                 />
                 <Results
                     resultsList={this.state.bookList}
-                    handleSave={this.handleSave}
+                    handleSave={() => this.handleSave(bookID)}
                 />
             </section>
         );
