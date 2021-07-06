@@ -1,18 +1,9 @@
 import axios from "axios";
 
-
-const genEmpList = {
-  genEmployees: function() {
-    return axios.get("https://randomuser.me/api/?results=100&nat=us");
-  }
-}
-
- export default genEmpList;
- 
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get("/api/books");
+  getBooks: function(query) {
+    return axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
   },
   // Deletes the book with the given id
   deleteBook: function(id) {
@@ -21,5 +12,8 @@ export default {
   // Saves a book to the database
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
+  },
+  bookList: function () {
+    return axios.get("/api/books");
   }
 };
