@@ -48,6 +48,7 @@ class Search extends Component {
             })
             .catch(err => console.log(err));
         // }
+        // console.log("book", book)
     }
 
     render() {
