@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
 function Nav() {
   return (
-    <ul className="nav navbar">
+    <ul className="nav">
       <li className="nav-item">
         <Link to="/">
-          Google Books
+          <span>Google Books</span>
         </Link>
       </li>
       <li className="nav-item">

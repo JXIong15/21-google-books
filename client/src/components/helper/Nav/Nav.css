@@ -1,0 +1,22 @@
+.nav-item {
+    margin: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+  }
+  
+  .nav a:hover,
+  .nav a:visited:hover {
+    color: #ff1044;
+    font-weight: bolder;
+  }
+  
+  .nav a:visited {
+    color: #bdbdbd;
+  }
+  
+  .nav span {
+    font-size: large;
+    font-weight: bold;
+  }
