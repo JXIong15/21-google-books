@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -9,11 +9,9 @@ function Home() {
                 <h2>Search for and Save Books of Interest</h2>
             </section>
 
-            <Router>
-                <Link to="/Search" role="button" className="btn btn-link">
-                   Search for Books
-                </Link>
-            </Router>
+            <Link to="/search" role="button" className="btn btn-link">
+                Search for Books
+            </Link>
         </div>
     );
 }
