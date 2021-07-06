@@ -13,7 +13,7 @@ export default {
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   },
-  bookList: function () {
+  savedBooks: function () {
     return axios.get("/api/books");
   }
 };
