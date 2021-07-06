@@ -8,19 +8,28 @@ class Book extends Component {
 
     componentDidMount = () => {
         API.savedBooks()
-            .then(res => this.setState({ savedList: res.data }))
+            .then(res => this.setState({ savedList: res }))
             .catch(err => console.log(err));
     }
 
-    handleSave = book => {
-        if (this.state.savedList.map(book => book._id).includes(book._id)) {
-            alert("Book already exists in Saved Books.")
-        }
-        else {
+    handleSave = event => {
+        event.preventDefault();
+        let book = this.props;
+        // MAKE SURE IT ACCOUNTS FOR ALREADY SAVED BOOKS
+        // if (this.state.savedList.includes(book._id)) {
+        //     alert("Book already exists in Saved Books.")
+        // }
+        // else {
+            // this.setState({savedList: this.state.savedList.concat(book)});
             API.saveBook(book)
-                .then(res => this.setState({ savedList: this.state.savedList.concat(res) }))
+                .then(res => {
+                    this.setState({ savedList: this.state.savedList.concat([res]) })
+                    console.log("res",res)
+                })
                 .catch(err => console.log(err));
-        }
+        // }
+        
+        console.log(this.state.savedList)
     }
 
     render() {
@@ -31,7 +40,7 @@ class Book extends Component {
                     <a href={this.props.link} target="_blank" rel="noopener noreferrer">
                         <button>View</button>
                     </a>
-                    <button onClick={this.handleSave(this.props)}>Save</button>
+                    <button onClick={this.handleSave}>Save</button>
                 </div>
                 <h4>Written By: {this.props.authors}</h4>
                 <section>
