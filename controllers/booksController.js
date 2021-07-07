@@ -9,7 +9,7 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  save: function(req, res) {
+  create: function(req, res) {
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
