@@ -3,8 +3,6 @@ import "./Book.css";
 
 // class Book extends Component {
 function Book(props) {
-    // let authors = JSON.parse(props.authors);
-    console.log(props.authors)
     return (
         <div className="book">
             <div className="head">
@@ -12,7 +10,9 @@ function Book(props) {
                 <button className="save" onClick={() => props.handleSave(props._id)}>Save</button>
 
             </div>
-            <h5>Written By: {props.authors ? props.authors : "No author."}</h5>
+            <h5>Written By: {props.authors ? 
+                props.authors.replace(/"/g, '').replace(']', '').slice(1).replace(',', ', ') 
+                : "No author"}</h5>
             <section>
                 <img src={props.image} alt={props.title + " thumbnail"}></img>
                 <p>{props.description ? props.description : "No synopsis."}</p>
