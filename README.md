@@ -3,10 +3,8 @@
 
 
 # To-Do
-* add to heroku
-    * add mongoDB atlas
 * assets/images/demos
-* Functionality, Tasks, Demos
+* Heroku slow
 
 ## Table of Contents
 * [Introduction](#introduction)
@@ -25,68 +23,70 @@
 Users can look up and save books.
 * Deployed App: https://google-books-jx.herokuapp.com/
 * GitHub: https://github.com/JXIong15/21-google-books
-<p align="center"><img src="./public/Assets/home.png" width="100%" stylealt="homepage"/></p>
+<p align="center"><img src="./assets/home.png" width="100%" style="border-radius: 10px" stylealt="homepage"/></p>
 
 
 ## Functionality
-* When the user loads the page, they are shown a biography of the portfolio.
-* Clicking on the `navtabs` at the top allow for page changes.
-* In the `My Work` section, there are two buttons. Clicking on either button will display either `Group Projcts` or `Individual Work`.
-  * Each project's image is clickable to the deployed app.
-  * The title is clickable to the GitHub Repo.
-* In the `Contact Page`, the contact information is clickable.
-  * The `Formspree` form can be filled out to send out inquiries.
+* When the user loads the page, they are shown a clickable navbar at the top of the page.
+* Homepage displays the name of app and its purpose. User can click on the nav elements of the button on the homepage.
+* On the Search page, user can search for a book by typing in the text box
+    * Book results will display below
+    * User can click on the title of the book to be taken to a book preview
+    * User can save the book to their collection by clicking the `Save` button
+* On the Saved page, all saved books by the user are displayed
+    * If there are no saved books, then a message indicating that will show
+    * User can click on the `Delete` button to remove the book from the Saved list
+    * User can click on the title to view a preview of the book
 
 
 ## Tasks Completed
 * Dowloaded necessary NPM packages with `npm install` on the Command Line
 * Created `src` and necessary folders for development
-* Created a `React-Router nav bar` to display different pages.
+* Created a server.js file to connect back-end and front-end
+* Copied over routes, utils, models, and controllers from Week 21: Activity 5.
+* Created a `React-Router nav` to display different pages.
 * Created a header, footer, and body using React.
-* In the work page, GitHub profile is clickable.
-* Created arrays for Homework and Group Projects. Set these arrays as states in the `Body.js`. 
-  * Passed this state as a ProjectList prop through `Work.js` to `Project.js`. Passed the HWList prop to the `Homework.js` file.
-  * Mapped over the `ProjectList` arrays to the `IndividualProject` component, displaying all projects using the same component.
-  * Since the `Individual Work` is displayed in two columns, had to create another array with each place in the array containing two of the homework assignments.
-    * Mapped over this array by passing each homework pair to `IndividualHW`.
-    * In `Individual Homework`, assigned each homework array to it's own constant. Pulled out needed data from each array to display in the return method as a row of two hw.
-* On the contact page, links are clickable.
-  * Form is created by Formspree and will send emails once submitted.
+* In the src:
+    * created a `Search` and `Saved` component
+    * In the Search component:
+        * created a form that returns the input value to the component
+        * the value runs in an API query search to get the first 10 books with that input
+        * books are mapped into a bookList array state, which is then passed to the `Results` page
+        * created a click function that `posts` the targeted book to the database collection (also passed to the Results page)
+    * In the Saved Component:
+        * uses an API call that `gets` all the saved book from the database to pass to the Results page
+        * created a Delete button that `removes` the targeted book from the database (also passed to the Results page)
+    * In the Results page, the passed in array is mapped to the `Book` page
+        * depending on which button function is passed in, that function and button label will be sent to Book as well
+    * In the Book page, the individual books from the passed in array are rendered
 
-<p align="center"><img src="./public/Assets/contact.png" width="100%" stylealt="contact page with contact form"/>Contact Page</p>
+<p align="center"><img src="./assets/search.png" width="100%" style="border-radius: 10px" stylealt="search page with 'Pokemon' as search value"/></p>
+<br>
+<p align="center"><img src="./assets/saved.png" width="100%" style="border-radius: 10px" stylealt="saved books"/></p>
 
 
 ## Technologies Used
 * React
-* Props-States
 * NavLinks/Routers
 * MongoDB
 * Heroku
 
 
 ## Installations
-* FormSpree React
 * React-Router-Dom
 * React
-* GH-Pages
 * Mongoose
+* Axios
 
 
 ## Demo
 * App Demo:
-<p align="center"><img src="./public/Assets/demo.gif" width="100% height="100%" stylealt="app demo"/></p>
-
-* Mobile Images:
-<p align="center">
-  <img src="./public/Assets/mobile-abt.png" width="30% height="100%" stylealt="app mobile demo"/>
-  <img src="./public/Assets/mobile-individual-work.png" width="30% height="100%" stylealt="app mobile demo"/>
-  <img src="./public/Assets/20-mobile-contact.png" width="30% height="100%" stylealt="app mobile demo"/>
-</p>
+<p align="center"><img src="./assets/google-books-demo.gif" style="border-radius: 10px" width="100% height="100%" stylealt="app demo"/></p>
 
 
 ## Known Issues
-* On Saved page, couldn't remove `\` (backslashes) from author(s)
 * Some words don't search
+* Heroku is slow to post
 
 
 ## Future Ideas
@@ -95,9 +95,9 @@ Users can look up and save books.
 
 ## Sources
 * NPM Packages: https://www.npmjs.com/
-* Heroku: https://dashboard.heroku.com/
+* Heroku: https://www.heroku.com/
 * React: https://reactjs.org/
-
+* MongoDB Atlas: https://www.mongodb.com/
 
 ## License
 Licensed under the [MIT License](LICENSE).
