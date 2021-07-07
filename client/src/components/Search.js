@@ -18,7 +18,6 @@ class Search extends Component {
         API.getBooks(query)
             .then(res => {
                 let arr = res.data.items;
-
                 this.setState({
                     bookList:
                         arr.map((book) => {
@@ -26,29 +25,13 @@ class Search extends Component {
                                 key: book.id,
                                 _id: book.id,
                                 title: book.volumeInfo.title,
-                                authors: JSON.stringify(book.volumeInfo.authors),
+                                authors: book.volumeInfo.authors ? JSON.stringify(book.volumeInfo.authors) : "[No Author]",
                                 description: book.volumeInfo.description,
                                 image: book.volumeInfo.imageLinks.thumbnail,
                                 link: book.volumeInfo.previewLink,
                             }
                         })
                 })
-
-
-                // arr.map((book) => {
-                //     this.setState({
-                //         bookList: this.state.bookList.push({
-                //             key: book.id,
-                //             _id: book.id,
-                //             title: book.volumeInfo.title,
-                //             authors: book.volumeInfo.authors,
-                //             description: book.volumeInfo.description,
-                //             image: book.volumeInfo.imageLinks.thumbnail,
-                //             link: book.volumeInfo.previewLink,
-                //         })
-                //     })
-                // })
-                // this.setState({ bookList: res.data.items })
             })
             .catch(err => console.log(err));
     }
@@ -66,21 +49,26 @@ class Search extends Component {
     };
 
     handleSave = id => {
-        let book = this.state.bookList.find((book) => book.id === id);
+        console.log("handleSave", id)
+        console.log(this.state.bookList)
+        
+        let book = this.state.bookList.find((book) => book._id === id);
         // CHECK FOR IF BOOK ALREADY EXISTS TOO
         API.saveBook({
-            _id: book.id,
-            title: book.volumeInfo.title,
-            authors: JSON.stringify(book.volumeInfo.authors),
-            description: book.volumeInfo.description,
-            image: book.volumeInfo.imageLinks.thumbnail,
-            link: book.volumeInfo.previewLink
+            _id: book._id,
+            title: book.title,
+            authors: book.authors ? JSON.stringify(book.authors) : "[No Author]",
+            description: book.description,
+            image: book.image,
+            link: book.link
         })
             .then(res => { })
             .catch(err => console.log(err.message));
+            console.log(book)
     }
 
     render() {
+        console.log(this.state.bookList)
         return (
             <section>
                 <Form

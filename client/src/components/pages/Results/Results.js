@@ -8,6 +8,7 @@ function Results(props) {
         <div className="search-res">
             <h4>Results</h4>
             <p>Click on the title to view a preview of the book.</p>
+            
                 {resList.map((book) => {
                     return (
                         <Book
@@ -18,8 +19,8 @@ function Results(props) {
                             description={book.description}
                             image={book.image}
                             link={book.link}
-                            handleSave={() => props.handleSave(book.id)}
-                            handleDelete={() => props.handleDelete(book.id)}
+                            btn={props.handleSave ? () => props.handleSave(book._id) : () => props.handleDelete(book._id)}
+                            btnLabel={props.handleSave ? "Save" : "Delete"}
                         />
                     )
                 })}
