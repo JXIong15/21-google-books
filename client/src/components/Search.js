@@ -16,7 +16,40 @@ class Search extends Component {
     // searches for book based on user input
     bookSearch = query => {
         API.getBooks(query)
-            .then(res => this.setState({ bookList: res.data.items }))
+            .then(res => {
+                let arr = res.data.items;
+
+                this.setState({
+                    bookList:
+                        arr.map((book) => {
+                            return {
+                                key: book.id,
+                                _id: book.id,
+                                title: book.volumeInfo.title,
+                                authors: JSON.stringify(book.volumeInfo.authors),
+                                description: book.volumeInfo.description,
+                                image: book.volumeInfo.imageLinks.thumbnail,
+                                link: book.volumeInfo.previewLink,
+                            }
+                        })
+                })
+
+
+                // arr.map((book) => {
+                //     this.setState({
+                //         bookList: this.state.bookList.push({
+                //             key: book.id,
+                //             _id: book.id,
+                //             title: book.volumeInfo.title,
+                //             authors: book.volumeInfo.authors,
+                //             description: book.volumeInfo.description,
+                //             image: book.volumeInfo.imageLinks.thumbnail,
+                //             link: book.volumeInfo.previewLink,
+                //         })
+                //     })
+                // })
+                // this.setState({ bookList: res.data.items })
+            })
             .catch(err => console.log(err));
     }
 
@@ -35,29 +68,16 @@ class Search extends Component {
     handleSave = id => {
         let book = this.state.bookList.find((book) => book.id === id);
         // CHECK FOR IF BOOK ALREADY EXISTS TOO
-        console.log({
-            id: book.id,
-            title: book.volumeInfo.title,
-            authors: book.volumeInfo.authors,
-            description: book.volumeInfo.description,
-            image: book.volumeInfo.imageLinks.thumbnail,
-            link: book.volumeInfo.previewLink
-        })
-        API.saveBook({ 
-            id: book.id,
+        API.saveBook({
+            _id: book.id,
             title: book.volumeInfo.title,
             authors: JSON.stringify(book.volumeInfo.authors),
             description: book.volumeInfo.description,
             image: book.volumeInfo.imageLinks.thumbnail,
             link: book.volumeInfo.previewLink
         })
-            .then(res => {
-                console.log("res",res);
-                // this.bookSearch()
-                // this.setState({ savedList: this.props.savedList.concat([res]) })
-            })
+            .then(res => { })
             .catch(err => console.log(err.message));
-        console.log("book", book)
     }
 
     render() {
