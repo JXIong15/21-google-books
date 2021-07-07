@@ -2,10 +2,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
-# To-Do
-* assets/images/demos
-* Heroku slow
-
 ## Table of Contents
 * [Introduction](#introduction)
 * [Functionality](#functionality)
