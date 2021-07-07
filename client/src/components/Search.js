@@ -49,13 +49,11 @@ class Search extends Component {
     };
 
     handleSave = id => {
-        console.log(this.state.bookList)
-
         let book = this.state.bookList.find((book) => book._id === id);
             API.saveBook({
                 _id: book._id,
                 title: book.title,
-                authors: book.authors ? JSON.stringify(book.authors) : "[No Author]",
+                authors: book.authors,
                 description: book.description,
                 image: book.image,
                 link: book.link

@@ -8,22 +8,28 @@ class Saved extends Component {
     }
 
     componentDidMount = () => {
+        this.loadSavedBooks();
+    }
+
+
+    loadSavedBooks = () => {
         API.savedBooks()
-            .then(res => this.setState({ savedList: res.data }))
-            .catch(err => console.log(err));
+        .then(res => this.setState({ savedList: res.data }))
+        .catch(err => console.log(err));
     }
 
     handleDelete = id => {
         API.deleteBook(id)
             .then(res => {
-                console.log(res)
+                this.loadSavedBooks();
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                alert("Book could NOT be deleted");
+                console.log(err)
+            });
     }
 
     render() {
-        console.log("saved: ", this.state.savedList)
-        console.log(this.state.savedList.length)
         return (
             <div>
                 <h3>Saved Books</h3>
