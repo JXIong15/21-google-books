@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import Results from "./pages/Results/Results";
-import API from "../utils/API";
+import Results from "../pages/Results/Results";
+import API from "../../utils/API";
+import './Saved.css';
 
 class Saved extends Component {
     state = {
@@ -32,7 +33,7 @@ class Saved extends Component {
     render() {
         return (
             <div>
-                <h3>Saved Books</h3>
+                <h3 className="saved">Saved Books</h3>
 
                 {(this.state.savedList.length > 0) ? (
                     <Results
@@ -40,7 +41,7 @@ class Saved extends Component {
                         handleDelete={this.handleDelete}
                     />
                 ) : (
-                    <h4>No saved books to display.</h4>
+                    <h4 className="none">No saved books to display.</h4>
                 )}
             </div>
         );

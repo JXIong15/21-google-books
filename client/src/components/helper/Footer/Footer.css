@@ -1,14 +1,18 @@
 footer {
     text-align: center;
-    margin: 20px;
-    /* position: absolute; */
+    margin: 10px;
+    position: absolute;
     bottom: 0;
     width: 100%;
+    /* margin: 2.5rem; */
+    /* height: 2.5rem; */
+    /* margin: 10px; */
 }
 
 footer p {
     margin-bottom: 0;
     color: #4e4e50;
+    margin-left: -25px;
 }
 
 footer a {

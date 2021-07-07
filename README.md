@@ -16,9 +16,9 @@
 
 
  ## Introduction
-An online portfolio developed using ReactJS. The portfolio contains a biography, work page with current coding projects, and a contact page with a submittable email form.
-* Deployed App: https://jxiong15.github.io/20-react-portfolio/
-* GitHub: https://github.com/JXIong15/20-react-portfolio
+Users can look up and save books.
+* Deployed App: https://google-books-jx.herokuapp.com/
+* GitHub: https://github.com/JXIong15/21-google-books
 <p align="center"><img src="./public/Assets/react.png" width="100%" stylealt="homepage/bio page"/></p>
 
 
@@ -83,6 +83,7 @@ An online portfolio developed using ReactJS. The portfolio contains a biography,
 
 ## Future Ideas
 * allow for more than 10 search results by clicking on "See More" button at the bottom of results.
+* get footer to stay on the bottom of the page
 
 
 ## Sources

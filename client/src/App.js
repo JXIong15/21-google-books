@@ -1,6 +1,6 @@
 import React from "react";
 import Search from "./components/Search";
-import Saved from "./components/Saved";
+import Saved from "./components/Saved/Saved";
 import Home from "./components/pages/Home/Home";
 import Nav from "./components/helper/Nav/Nav";
 import Footer from "./components/helper/Footer/Footer";

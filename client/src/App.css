@@ -3,3 +3,8 @@
   color: white;
   font-size: large;
 }
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
