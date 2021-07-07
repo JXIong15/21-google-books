@@ -8,7 +8,6 @@ function Results(props) {
         <div className="search-res">
             <h4>Results</h4>
             <p>Click on the title to view a preview of the book.</p>
-            
                 {resList.map((book) => {
                     return (
                         <Book

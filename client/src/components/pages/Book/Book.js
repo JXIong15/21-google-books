@@ -7,7 +7,7 @@ function Book(props) {
         <div className="book">
             <div className="head">
                 <h4><a href={props.link} target="_blank" rel="noopener noreferrer">{props.title}</a></h4>
-                <button className="save" onClick={() => props.btn(props._id)}>{props.btnLabel}</button>
+                <button className="event-btn" onClick={() => props.btn(props._id)}>{props.btnLabel}</button>
 
             </div>
             <h5>Written By: {props.authors ? 

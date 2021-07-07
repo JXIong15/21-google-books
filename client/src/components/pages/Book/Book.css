@@ -12,9 +12,8 @@
     justify-content: space-between;
 }
 
-.save {
+.event-btn {
     background-color: #c3073f;
-    margin-left: 10px;
     border-radius: 5px;
 }
 
@@ -23,13 +22,20 @@
     text-decoration: none;
 }
 
-.book a:hover {
+.book a:hover,
+.event-btn:hover {
     font-weight: bolder;
     color: #c3073f;
 }
 
-.save:hover {
+.event-btn:hover {
+    color: white;
     font-weight: bolder;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 30px 0px #c3073f;
+    -moz-box-shadow: 0px 0px 30px 0px #c3073f;
+    box-shadow: 0px 0px 30px 0px #c3073f;
 }
 
 .book h5 {
