@@ -2,6 +2,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 
+# To-Do
+* add to heroku
+    * add mongoDB atlas
+* assets/images/demos
+* Functionality, Tasks, Demos
+
 ## Table of Contents
 * [Introduction](#introduction)
 * [Functionality](#functionality)
@@ -19,7 +25,7 @@
 Users can look up and save books.
 * Deployed App: https://google-books-jx.herokuapp.com/
 * GitHub: https://github.com/JXIong15/21-google-books
-<p align="center"><img src="./public/Assets/react.png" width="100%" stylealt="homepage/bio page"/></p>
+<p align="center"><img src="./public/Assets/home.png" width="100%" stylealt="homepage"/></p>
 
 
 ## Functionality
@@ -51,11 +57,11 @@ Users can look up and save books.
 
 
 ## Technologies Used
-* GitHub Pages
 * React
 * Props-States
 * NavLinks/Routers
-* FormSpree
+* MongoDB
+* Heroku
 
 
 ## Installations
@@ -63,6 +69,7 @@ Users can look up and save books.
 * React-Router-Dom
 * React
 * GH-Pages
+* Mongoose
 
 
 ## Demo
@@ -79,17 +86,16 @@ Users can look up and save books.
 
 ## Known Issues
 * On Saved page, couldn't remove `\` (backslashes) from author(s)
+* Some words don't search
 
 
 ## Future Ideas
 * allow for more than 10 search results by clicking on "See More" button at the bottom of results.
-* get footer to stay on the bottom of the page
 
 
 ## Sources
 * NPM Packages: https://www.npmjs.com/
-* GitHub Pages: https://pages.github.com/
-* FormSpree: https://formspree.io/
+* Heroku: https://dashboard.heroku.com/
 * React: https://reactjs.org/
 
 

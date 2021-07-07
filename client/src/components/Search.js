@@ -33,7 +33,10 @@ class Search extends Component {
                         })
                 })
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                alert("Search something else");
+            });
     }
 
     handleInputChange = event => {
