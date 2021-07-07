@@ -4,13 +4,11 @@ import "./Results.css"
 
 function Results(props) {
     let resList = Object.values(props.resultsList);
-    console.log("resList", resList)
     return (
         <div className="search-res">
             <h4>Results</h4>
             <p>Click on the title to view a preview of the book.</p>
                 {resList.map((book) => {
-                    console.log("book", book)
                     return (
                         <Book
                             key={book._id}
